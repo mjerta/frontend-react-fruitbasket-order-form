@@ -1,25 +1,27 @@
-import {useState} from "react";
+function Box({handleOnClick, icon, printedName, state, fruitName}) {
 
-function Box({props}) {
+  // const [amount, setAmount] = useState(0)
 
-  const [amount, setAmount] = useState(0)
-
-  function handleOnClick(e) {
-    e.target.name === "minus" && setAmount(amount - 1)
-    e.target.name === "plus" && setAmount(amount + 1)
-  }
-
+  // function handleOnClick(e) {
+  //   e.target.name === "minus" && setAmount(amount > 0 ?  amount - 1  : 0)
+  //   e.target.name === "plus" && setAmount(amount + 1)
+  // }
   return (
 
     <div className="box">
-      <span className="icon">🍓</span>Aarbeien
-      <button name="minus"
-              onClick={handleOnClick}
-              className="minus">-</button>
-      {amount}
-      <button name="plus" o
-              onClick={handleOnClick}
-              className="plus">+
+      <span className="icon">{icon}</span>{printedName}
+      <button
+        name="minus"
+        data-fruits={fruitName}
+        onClick={handleOnClick}
+        className="minus">-
+      </button>
+      {state}
+      <button
+        name="plus"
+        data-fruits={fruitName}
+        onClick={handleOnClick}
+        className="plus">+
       </button>
     </div>
   )
