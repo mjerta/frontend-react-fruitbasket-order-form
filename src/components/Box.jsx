@@ -1,11 +1,4 @@
 function Box({handleOnClick, icon, printedName, state, fruitName}) {
-
-  // const [amount, setAmount] = useState(0)
-
-  // function handleOnClick(e) {
-  //   e.target.name === "minus" && setAmount(amount > 0 ?  amount - 1  : 0)
-  //   e.target.name === "plus" && setAmount(amount + 1)
-  // }
   return (
 
     <div className="box">

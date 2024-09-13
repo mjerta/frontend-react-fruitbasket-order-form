@@ -1,7 +1,6 @@
 import './App.css'
 import {useState} from "react";
 // Images
-import headerImage from "./assets/screenshot-logo.png"
 // Components
 import Box from "./components/Box.jsx";
 
@@ -10,6 +9,7 @@ import fruits from "./constants/fruits.js";
 
 // Helper functions
 import getTotalValue from "./helper-functions/getTotalValue.js";
+import SubForm from "./components/SubForm.jsx";
 
 function App() {
   // reusable initial state
@@ -60,6 +60,11 @@ function App() {
           <button onClick={handleReset} className="reset">
             Reset
           </button>
+        </div>
+        <div className="box-container">
+          <SubForm
+
+          />
         </div>
       </div>
     </>
