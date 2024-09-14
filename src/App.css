@@ -72,47 +72,93 @@ header {
   display: flex;
   flex-direction: column;
 
+
+  .check-box-span {
+    order: 1;
+  }
+
+  & textarea {
+    margin-bottom: 1rem;
+  }
+
   & label {
     flex: 1;
     display: flex;
-    margin-bottom: 1rem;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
 
     & input {
       margin-left: 0.8rem;
       flex: 1;
     }
-  }
-}
 
-.text-before-input:first-letter {
-  text-transform: capitalize;
-}
-
-
-.delivery-frequency {
-  display: flex;
-  flex-direction: column;
-
-  & :first-child {
-    margin-bottom: 1rem;
+    & input[type="checkbox"] {
+      flex: 0;
+      margin: 0;
+      margin-right: 0.8rem;
+    }
   }
 
   & select {
     align-self: flex-start;
-    background: none;
-    padding: 0.5rem;
+    padding: .3rem;
   }
-}
 
-.time-stack {
-  display: flex;
-}
+  .radio-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-.comments {
-  display: flex;
-  flex-direction: column;
-}
+    & label {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      flex: 0;
+    }
 
-button[type="submit"] {
-  padding: .2rem .4rem;
+    & input {
+      margin-right: .2rem;
+      margin-left: 0;
+    }
+
+  }
+
+  .labels-inputs {
+    margin-bottom: 1rem;
+  }
+
+  .text-before-input:first-letter {
+    text-transform: capitalize;
+  }
+
+
+  .delivery-frequency {
+    display: flex;
+    flex-direction: column;
+
+    & :first-child {
+      margin-bottom: 1rem;
+    }
+
+    & select {
+      align-self: flex-start;
+      background: none;
+      padding: 0.5rem;
+    }
+  }
+
+  .time-stack {
+    display: flex;
+  }
+
+  .comments {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button[type="submit"] {
+    align-self: flex-start;
+    padding: .2rem .4rem;
+  }
 }

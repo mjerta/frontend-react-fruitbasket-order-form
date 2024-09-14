@@ -2,27 +2,38 @@ import './App.css'
 import {useState} from "react";
 // Images
 // Components
-import Box from "./components/Box.jsx";
+import Box from "./components/main-components/Box.jsx";
 
 // Objects
 import fruits from "./constants/fruits.js";
 
 // Helper functions
 import getTotalValue from "./helper-functions/getTotalValue.js";
-import SubForm from "./components/SubForm.jsx";
+import SubForm from "./components/main-components/SubForm.jsx";
+import Button from "./components/input-components/Button.jsx";
 
 function App() {
   // reusable initial state
   const initialFruitValue = {
     strawberry: 0, banana: 0, apple: 0, kiwi: 0
   }
+  const [stateForm, setStateForm] = useState({
+    firstName: '',
+    lastName: '', age: 0,
+    zipcode: '',
+    frequency: 'iedere week',
+    radioInput: "overdag",
+    textAreaInput: '',
+    checkBox: false
+  })
 
   // state
   const [amount, setAmount] = useState(
     initialFruitValue
   )
 
-  // Reset state
+  // All handles on top level(app.jsx)
+
   function handleReset() {
     setAmount(initialFruitValue)
   }
@@ -37,6 +48,18 @@ function App() {
       ...amount,
       [fruitName]: amount[fruitName] + 1
     })
+  }
+
+  function handleOnChange(e) {
+    const newValue = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setStateForm({...stateForm, [e.target.name]: newValue})
+  }
+
+  function handleOnSubmit(e) {
+    e.preventDefault();
+
+    console.log(amount)
+    console.log(stateForm);
   }
 
   return (
@@ -57,13 +80,17 @@ function App() {
               )
             )
           }
-          <button onClick={handleReset} className="reset">
-            Reset
-          </button>
+          <Button
+            className="reset"
+            handleOnClick={handleReset}
+            buttonText={"Reset"}
+          />
         </div>
         <div className="box-container">
           <SubForm
-
+            state={stateForm}
+            handleOnChange={handleOnChange}
+            handleOnSubmit={handleOnSubmit}
           />
         </div>
       </div>
