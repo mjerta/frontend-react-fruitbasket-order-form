@@ -15,7 +15,8 @@ function SubForm({state, handleOnChange, handleOnSubmit}) {
       {
         inputs.map((input) => (
           <Input
-            className="labels-inputs"
+            className="labels-inputs "
+            inputClassName={input.className}
             key={input.name}
             text={input.text}
             name={input.name}
