@@ -66,33 +66,36 @@ function App() {
     <>
       <div className="wrapper">
         <header>
+          <h2>Fruitmand Store</h2>
         </header>
-        <div className="box-container">
-          {
-            fruits.map((fruit) => (
-                <Box key={fruit.name}
-                     icon={fruit.icon}
-                     fruitName={fruit.name}
-                     handleOnClick={handleOnClick}
-                     printedName={fruit.printedName}
-                     state={amount[fruit.name]}
-                />
+        <main>
+          <div className="box-container">
+            {
+              fruits.map((fruit) => (
+                  <Box key={fruit.name}
+                       icon={fruit.icon}
+                       fruitName={fruit.name}
+                       handleOnClick={handleOnClick}
+                       printedName={fruit.printedName}
+                       state={amount[fruit.name]}
+                  />
+                )
               )
-            )
-          }
-          <Button
-            className="reset"
-            handleOnClick={handleReset}
-            buttonText={"Reset"}
-          />
-        </div>
-        <div className="box-container">
-          <SubForm
-            state={stateForm}
-            handleOnChange={handleOnChange}
-            handleOnSubmit={handleOnSubmit}
-          />
-        </div>
+            }
+            <Button
+              className="reset"
+              handleOnClick={handleReset}
+              buttonText={"Reset"}
+            />
+          </div>
+          <div className="box-container">
+            <SubForm
+              state={stateForm}
+              handleOnChange={handleOnChange}
+              handleOnSubmit={handleOnSubmit}
+            />
+          </div>
+        </main>
       </div>
     </>
   )

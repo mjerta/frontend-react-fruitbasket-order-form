@@ -11,7 +11,7 @@ import Button from "../input-components/Button.jsx";
 function SubForm({state, handleOnChange, handleOnSubmit}) {
 
   return (
-    <form onSubmit={handleOnSubmit} className="sub-form">
+    <form autoComplete="off" onSubmit={handleOnSubmit} className="sub-form">
       {
         inputs.map((input) => (
           <Input
@@ -40,7 +40,7 @@ function SubForm({state, handleOnChange, handleOnSubmit}) {
       />
       <TextArea
         name={"textAreaInput"}
-        rows={10}
+        rows={6}
         state={state.textAreaInput}
         handleOnChange={handleOnChange}
         textLabel={"Opmerking"}

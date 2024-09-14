@@ -9,6 +9,8 @@
 body {
   font-family: "Roboto", system-ui;
   height: 100vh;
+  background: rgba(95, 169, 117, 0.6);
+
 }
 
 #root {
@@ -19,24 +21,38 @@ body {
 }
 
 header {
-  background-image: url("./assets/screenshot-logo.png");
-  height: 15rem;
   width: 100%;
-  background-repeat: no-repeat;
-  flex-grow: 1;
-  background-size: contain;
+  padding: 1rem;
+  display: flex;
+  color: #5e7c12;
 }
 
 .wrapper {
-  width: 800px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*background-image: url("./assets/pexels-wdnet-235294.jpg");*/
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
 }
 
 .box-container {
-  width: 50%;
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  border-color: transparent;
+  padding: 1rem;
+  border-radius: .3rem;
+  background: rgba(232, 169, 104, 0.8);
+  background: linear-gradient(135deg, #2e8b57, rgba(154, 205, 50, 0.3));
+  width: 35em;
+  margin: 2rem 1rem;
 }
 
 .box {
@@ -57,33 +73,37 @@ header {
   margin-right: .4rem;
 }
 
-.reset {
-  width: 100%;
+.reset, button[type="submit"] {
+  align-self: center;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem 2rem;
 }
+button[type="submit"] {
+  align-self: flex-start;
+}
+
 
 .printed-name {
   font-weight: bold;
+  flex-basis: 8rem;
 }
 
 .sub-form {
   display: flex;
   flex-direction: column;
-
-
-  .check-box-span {
-    order: 1;
-  }
+  padding: 2rem;
 
   & textarea {
     margin-bottom: 1rem;
+    padding:.5rem;
+    resize: none;
   }
 
   & label {
     flex: 1;
     display: flex;
+    align-items: center;
 
     &:first-letter {
       text-transform: capitalize;
@@ -92,6 +112,7 @@ header {
     & input {
       margin-left: 0.8rem;
       flex: 1;
+      padding: 0.8rem .5rem;
     }
 
     & input[type="checkbox"] {
@@ -126,8 +147,12 @@ header {
 
   .labels-inputs {
     margin-bottom: 1rem;
+
   }
 
+  .text-before-input {
+    flex-basis: 6rem;
+  }
   .text-before-input:first-letter {
     text-transform: capitalize;
   }
@@ -158,13 +183,18 @@ header {
   }
 
   button[type="submit"] {
-    align-self: flex-start;
-    padding: .2rem .4rem;
+    /*align-self: flex-start;*/
+    /*padding: .2rem .4rem;*/
+  }
+
+  .check-box-span {
+    order: 1;
+    flex-basis: 100%;
   }
 }
 
 .box-positive {
-  border-color: green;
+  border-color: #0bda0b;
   border-width: 4px;
 
 }
