@@ -1,7 +1,16 @@
+import isAmountAboveNull from "../../helper-functions/isAmountAboveNull.js";
+
 function Box({handleOnClick, icon, printedName, state, fruitName}) {
+
+  const className = isAmountAboveNull(state) && "box-positive";
   return (
 
-    <div className="box">
+    <div
+      className=
+        {`box 
+          ${className}
+        `}
+    >
       <span className="icon">{icon}</span><span
       className="printed-name">{printedName}</span>
       <button

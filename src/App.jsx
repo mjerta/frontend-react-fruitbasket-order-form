@@ -57,9 +57,9 @@ function App() {
 
   function handleOnSubmit(e) {
     e.preventDefault();
-
     console.log(amount)
     console.log(stateForm);
+    console.log(getTotalValue(amount))
   }
 
   return (
