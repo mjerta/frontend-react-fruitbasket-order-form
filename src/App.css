@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*
+  1 - CSS RESET
+  2 - GENERAL STYLES
+  3 - STYLES FOR CONTAINER BOX
+    3.1 - STYLES FOR FRUIT BASKET
+    3.2 - STYLES FOR FORM
+*/
 
+/*
+====================================================================
+  1 - CSS RESET
+====================================================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*css reset*/
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", system-ui;
-  height: 100vh;
-  /*background: rgba(95, 169, 117, 0.6);*/
-
-}
 /* Hide spinners in Chrome, Safari, and Edge */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -27,6 +34,16 @@ input[type="number"] {
 /* Hide spinners in IE and Edge */
 input[type="number"] {
   -ms-appearance: none;
+}
+
+/*
+====================================================================
+  1 - CSS RESET
+====================================================================
+*/
+body {
+  font-family: "Roboto", system-ui;
+  height: 100vh;
 }
 
 #root {
@@ -49,17 +66,21 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*background-image: url("./assets/pexels-wdnet-235294.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 main {
   display: flex;
   justify-content: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
+/*
+====================================================================
+  1 - CSS RESET
+====================================================================
+*/
 .box-container {
   display: flex;
   flex-direction: column;
@@ -82,8 +103,13 @@ main {
   border: 2px solid;
   padding: 2rem;
   margin-bottom: 1rem;
-
 }
+
+.box-positive {
+  border-color: #0bda0b;
+  border-width: 4px;
+}
+
 
 .fruit-btn {
   padding: .2rem .5rem;
@@ -91,33 +117,42 @@ main {
   margin-right: .4rem;
 }
 
-.reset, button[type="submit"] {
-  align-self: center;
+.main-button {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem 2rem;
   cursor: pointer;
 }
+
+.reset{
+  align-self: center;
+}
+
 button[type="submit"] {
   align-self: flex-start;
 }
 
-
 .printed-name {
   font-weight: bold;
   flex-basis: 8rem;
+  margin-left: .3rem;
 }
 
+
+/*
+====================================================================
+  1 - CSS RESET
+====================================================================
+*/
 .sub-form {
   display: flex;
   flex-direction: column;
   padding: 2rem;
 
 
-
   & textarea {
     margin-bottom: 1rem;
-    padding:.5rem;
+    padding: .5rem;
     resize: none;
   }
 
@@ -126,10 +161,6 @@ button[type="submit"] {
     display: flex;
     align-items: center;
 
-    .shorter-input {
-      flex: 0;
-      width: 7rem;
-    }
 
     &:first-letter {
       text-transform: capitalize;
@@ -137,14 +168,22 @@ button[type="submit"] {
 
     & input {
       margin-left: 0.8rem;
-      flex: 1;
       padding: 0.8rem .5rem;
+      min-width: 2rem;
+      flex-basis: 12rem;
+    }
+
+    .shorter-input {
+      flex-basis: 5rem;
+    }
+
+    .age {
+      flex-basis: 5rem;
     }
 
     & input[type="checkbox"] {
       flex: 0;
-      margin: 0;
-      margin-right: 0.8rem;
+      margin: 0 0.8rem 0 0;
     }
   }
 
@@ -168,21 +207,19 @@ button[type="submit"] {
       margin-right: .2rem;
       margin-left: 0;
     }
-
   }
 
   .labels-inputs {
     margin-bottom: 1rem;
-
   }
 
   .text-before-input {
     flex-basis: 6rem;
   }
+
   .text-before-input:first-letter {
     text-transform: capitalize;
   }
-
 
   .delivery-frequency {
     display: flex;
@@ -208,19 +245,9 @@ button[type="submit"] {
     flex-direction: column;
   }
 
-  button[type="submit"] {
-    /*align-self: flex-start;*/
-    /*padding: .2rem .4rem;*/
-  }
-
   .check-box-span {
     order: 1;
     flex-basis: 100%;
   }
 }
 
-.box-positive {
-  border-color: #0bda0b;
-  border-width: 4px;
-
-}

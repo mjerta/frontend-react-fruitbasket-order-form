@@ -57,6 +57,7 @@ function SubForm({state, handleOnChange, handleOnSubmit}) {
       />
       <Button
         type="submit"
+        className="main-button"
         buttonText={"Verzend"}
       />
     </form>

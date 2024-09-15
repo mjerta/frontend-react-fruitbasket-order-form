@@ -83,7 +83,7 @@ function App() {
               )
             }
             <Button
-              className="reset"
+              className="reset main-button"
               handleOnClick={handleReset}
               buttonText={"Reset"}
             />

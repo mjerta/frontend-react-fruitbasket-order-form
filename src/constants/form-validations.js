@@ -17,7 +17,7 @@ export const inputs = [
     text: 'leeftijd',
     type: 'number',
     initialValue: 0,
-    className: "shorter-input"
+    className: "age"
   },
   {
     name: 'zipcode',
