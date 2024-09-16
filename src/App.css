@@ -1,0 +1,270 @@
+/*
+  1 - CSS RESET
+  2 - GENERAL STYLES
+  3 - STYLES FOR CONTAINER BOX
+    3.1 - STYLES FOR FRUIT BASKET
+    3.2 - STYLES FOR FORM
+*/
+
+/*
+====================================================================
+  1 - CSS RESET
+====================================================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*css reset*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide spinners in Chrome, Safari, and Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* Hide spinners */
+}
+
+/* Hide spinners in IE and Edge */
+input[type="number"] {
+  -ms-appearance: none;
+}
+
+/*
+====================================================================
+  1 - GENERAL STYLES
+====================================================================
+*/
+body {
+  font-family: "Roboto", system-ui;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  color: #5e7c12;
+}
+
+.wrapper {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*
+====================================================================
+  1 - STYLES FOR CONTAINER BOX
+====================================================================
+*/
+.box-container {
+  display: flex;
+  flex-direction: column;
+  border-color: transparent;
+  padding: 1rem;
+  border-radius: .3rem;
+  background: rgba(232, 169, 104, 0.8);
+  background: linear-gradient(135deg, #205d3a, rgba(154, 205, 50, 0.3));
+  width: 35em;
+  margin: 2rem 1rem;
+  color: white;
+}
+
+
+/*
+====================================================================
+  1 - STYLES FOR FRUIT BASKET
+====================================================================
+*/
+
+.box {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  align-items: center;
+  border-radius: .3rem;
+  border: 2px solid;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.box-positive {
+  border-color: #0bda0b;
+  border-width: 4px;
+}
+
+
+.fruit-btn {
+  padding: .2rem .5rem;
+  margin-left: .4rem;
+  margin-right: .4rem;
+}
+
+.main-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.reset{
+  align-self: center;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+}
+
+.printed-name {
+  font-weight: bold;
+  flex-basis: 8rem;
+  margin-left: .3rem;
+}
+
+
+/*
+====================================================================
+  1 - STYLES FOR FORM
+====================================================================
+*/
+.sub-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  .error-message {
+    font-size: 1rem;
+    flex-basis: 1.3rem;
+    color: #f1f006;
+  }
+
+  .error-message:first-letter {
+    text-transform: uppercase;
+  }
+
+
+  & textarea {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    resize: none;
+  }
+
+  & label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    & input {
+      margin-left: 0.8rem;
+      padding: 0.8rem .5rem;
+      min-width: 2rem;
+      flex-basis: 12rem;
+    }
+
+    .shorter-input {
+      flex-basis: 5rem;
+    }
+
+    .age {
+      flex-basis: 5rem;
+    }
+
+    & input[type="checkbox"] {
+      flex: 0;
+      margin: 0 0.8rem 0 0;
+    }
+  }
+
+  & select {
+    align-self: flex-start;
+    padding: .3rem;
+  }
+
+  .radio-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & label {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      flex: 0;
+    }
+
+    & input {
+      margin-right: .2rem;
+      margin-left: 0;
+    }
+  }
+
+  .labels-inputs {
+    margin: 1rem 0;
+  }
+
+  .text-before-input {
+    flex-basis: 6rem;
+  }
+
+  .text-before-input:first-letter {
+    text-transform: capitalize;
+  }
+
+  .delivery-frequency {
+    display: flex;
+    flex-direction: column;
+
+    & :first-child {
+      margin-bottom: 1rem;
+    }
+
+    & select {
+      align-self: flex-start;
+      background: none;
+      padding: 0.5rem;
+    }
+  }
+
+  .time-stack {
+    display: flex;
+  }
+
+  .comments {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .check-box-span {
+    order: 1;
+    flex-basis: 100%;
+  }
+}
+
