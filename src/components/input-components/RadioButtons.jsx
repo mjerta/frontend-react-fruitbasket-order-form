@@ -1,4 +1,4 @@
-function RadioButtons({options,handleOnChange, state, className}) {
+function RadioButtons({options, className, register}) {
   return (
     <div className={`radio-buttons ${className}`}>
       {options.map((option, index) => (
@@ -8,8 +8,10 @@ function RadioButtons({options,handleOnChange, state, className}) {
               id={index}
               name="radioInput"
               value={option}
-              checked={state === option}
-              onChange={handleOnChange}
+              {...register("radioInput", {
+                required: true
+              })}
+              // onChange={handleOnChange}
             />
             {option}
           </label>

@@ -1,6 +1,6 @@
 import './App.css'
 import {useState} from "react";
-// Images
+
 // Components
 import Box from "./components/main-components/Box.jsx";
 
@@ -13,19 +13,11 @@ import SubForm from "./components/main-components/SubForm.jsx";
 import Button from "./components/input-components/Button.jsx";
 
 function App() {
+
   // reusable initial state
   const initialFruitValue = {
     strawberry: 0, banana: 0, apple: 0, kiwi: 0
   }
-  const [stateForm, setStateForm] = useState({
-    firstName: '',
-    lastName: '', age: 0,
-    zipcode: '',
-    frequency: 'iedere week',
-    radioInput: "overdag",
-    textAreaInput: '',
-    checkBox: false
-  })
 
   // state
   const [amount, setAmount] = useState(
@@ -33,7 +25,6 @@ function App() {
   )
 
   // All handles on top level(app.jsx)
-
   function handleReset() {
     setAmount(initialFruitValue)
   }
@@ -50,15 +41,9 @@ function App() {
     })
   }
 
-  function handleOnChange(e) {
-    const newValue = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setStateForm({...stateForm, [e.target.name]: newValue})
-  }
-
-  function handleOnSubmit(e) {
-    e.preventDefault();
+  function handleOnSubmit(data) {
+    console.log(data)
     console.log(amount)
-    console.log(stateForm);
     console.log(getTotalValue(amount))
   }
 
@@ -90,8 +75,6 @@ function App() {
           </div>
           <div className="box-container">
             <SubForm
-              state={stateForm}
-              handleOnChange={handleOnChange}
               handleOnSubmit={handleOnSubmit}
             />
           </div>

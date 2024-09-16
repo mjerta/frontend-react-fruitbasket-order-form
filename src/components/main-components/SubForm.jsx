@@ -1,17 +1,33 @@
 // Constants
 import {inputs} from '../../constants/form-validations.js';
 
-// import {useForm} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import Input from "../input-components/Input.jsx";
 import SelectBox from "../input-components/SelectBox.jsx";
 import RadioButtons from "../input-components/RadioButtons.jsx";
 import TextArea from "../input-components/TextArea.jsx";
 import Button from "../input-components/Button.jsx";
 
-function SubForm({state, handleOnChange, handleOnSubmit}) {
+function SubForm({handleOnSubmit}) {
+
+
+   // react hook form
+  const {
+    register,
+    handleSubmit,
+    formState: {errors}
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      radioInput: 'overdag'
+    }
+  });
 
   return (
-    <form autoComplete="off" onSubmit={handleOnSubmit} className="sub-form">
+    // <form autoComplete="off" onSubmit={handleOnSubmit} className="sub-form">
+    <form autoComplete="off" onSubmit={handleSubmit((data) => {
+      handleOnSubmit(data);
+    })} className="sub-form">
       {
         inputs.map((input) => (
           <Input
@@ -20,9 +36,14 @@ function SubForm({state, handleOnChange, handleOnSubmit}) {
             key={input.name}
             text={input.text}
             name={input.name}
+            register={register}
             type={input.type}
-            state={state[input.name]}
-            handleOnChange={handleOnChange}
+            required={input.required}
+            minAge={input.minAge}
+            maxAge={input.maxAge}
+            errors={errors}
+            maxLength={input.maxLength}
+            pattern={input.pattern}
           />
         ))
       }
@@ -30,30 +51,30 @@ function SubForm({state, handleOnChange, handleOnSubmit}) {
         className="labels-inputs"
         name={"frequency"}
         options={['iedere week', 'om de week', 'iedere maand']}
-        handleOnChange={handleOnChange}
         labelText={"Bezorgfrequentie"}
+        register={register}
       />
       <RadioButtons
         className="labels-inputs"
         options={['overdag', "avond"]}
-        handleOnChange={handleOnChange}
-        state={state.radioInput}
+        register={register}
       />
       <TextArea
         name={"textAreaInput"}
         rows={6}
-        state={state.textAreaInput}
-        handleOnChange={handleOnChange}
+        register={register}
         textLabel={"Opmerking"}
       />
       <Input
         className="labels-inputs"
         spanClass="check-box-span"
+        errorMessage="U moet akkoord gaan de algemene voorwaarden."
         text={"Ik ga akkoord meet de voorwaarden"}
         name={"checkBox"}
+        required={true}
+        register={register}
         type={"checkbox"}
-        state={state.checkBox}
-        handleOnChange={handleOnChange}
+        errors={errors}
       />
       <Button
         type="submit"
